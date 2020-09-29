@@ -55,6 +55,7 @@
 #include <cassert>
 #include "swap_space.hpp"
 #include "backing_store.hpp"
+#include <iostream>
 
 ////////////////// Upserts
 
@@ -659,6 +660,8 @@ public:
     min_node_size(minnodesize)
   {
     root = ss->allocate(new node);
+    std::cout<<"Max node size = "<<max_node_size<<std::endl;
+    std::cout<<"Min node size = "<<min_node_size<<std::endl;
   }
 
   // Insert the specified message and handle a split of the root if it
